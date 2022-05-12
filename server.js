@@ -65,11 +65,11 @@ app.get('/', (req,res)=>{
 //   })
 // })
 
-app.get('/seed/' , (req,res)=>{
-  Schema.create(nutrition, (err,seedData)=>{
-    res.redirect('/')
-  })
-})
+// app.get('/seed/' , (req,res)=>{
+//   Schema.create(nutrition, (err,seedData)=>{
+//     res.redirect('/')
+//   })
+// })
 //___________________
 //Listener
 //___________________

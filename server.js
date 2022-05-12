@@ -4,6 +4,8 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const Schema = require('./models/Schema.js')
+const nutrition = require('./models/data.js')
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
@@ -23,7 +25,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
 mongoose.connect(MONGODB_URI , ()=>{
-    console.log('hello world')
+    console.log('The connection with mongod is established')
 });
 
 // Error / success
@@ -50,10 +52,24 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/Nutrition' , (req, res) => {
-  res.render('index.ejs');
-});
 
+app.get('/', (req,res)=>{
+  Schema.find({}, (err,userInfo)=>{
+    res.render('index.ejs' , {user:userInfo})
+  })
+})
+
+// app.get('/', (req,res)=>{
+//   Schema.find({}, (err,userInfo)=>{
+//     res.send(userInfo)
+//   })
+// })
+
+app.get('/seed/' , (req,res)=>{
+  Schema.create(nutrition, (err,seedData)=>{
+    res.redirect('/')
+  })
+})
 //___________________
 //Listener
 //___________________

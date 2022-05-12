@@ -24,7 +24,6 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // May or may not need these depending on your Mongoose version
 mongoose.connect(MONGODB_URI , ()=>{
     console.log('hello world')
-    console.log('blaadddd')
 });
 
 // Error / success
@@ -51,8 +50,8 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World and to all!');
+app.get('/Nutrition' , (req, res) => {
+  res.render('index.ejs');
 });
 
 //___________________

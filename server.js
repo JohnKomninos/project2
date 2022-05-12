@@ -4,7 +4,7 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-const Schema = require('./models/Schema.js')
+// const Schema = require('./models/Schema.js')
 const nutrition = require('./models/data.js')
 const app = express ();
 const db = mongoose.connection;
@@ -54,10 +54,13 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //localhost:3000
 
 app.get('/', (req,res)=>{
-  Schema.find({}, (err,userInfo)=>{
-    res.render('index.ejs' , {user:userInfo})
-  })
+  res.render('index.ejs')
 })
+// app.get('/', (req,res)=>{
+//   Schema.find({}, (err,userInfo)=>{
+//     res.render('index.ejs' , {user:userInfo})
+//   })
+// })
 
 // app.get('/', (req,res)=>{
 //   Schema.find({}, (err,userInfo)=>{

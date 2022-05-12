@@ -4,8 +4,8 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-// const Schema = require('./models/Schema.js')
-// const nutrition = require('./models/data.js')
+const Schema = require('./models/Schema.js')
+const nutrition = require('./models/data.js')
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()

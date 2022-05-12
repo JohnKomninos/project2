@@ -24,7 +24,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // May or may not need these depending on your Mongoose version
 mongoose.connect(MONGODB_URI , ()=>{
     console.log('hello world')
-    console.log('blaa')
+    console.log('blaadddd')
 });
 
 // Error / success

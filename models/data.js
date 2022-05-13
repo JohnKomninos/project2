@@ -1,7 +1,48 @@
 module.exports=[
   {
-    name:'John',
-    age:31,
-    height:73
+    Age:31,
+    Sex: 'Male',
+    Weight:180,
+    Height:73,
+    ActivityLevel:'intense',
+    Goal:'Gaoin mass',
+    status:'Active'
+  },
+  {
+    Age:31,
+    Sex: 'Male',
+    Weight:180,
+    Height:73,
+    ActivityLevel:'intense',
+    Goal:'Gaoin mass',
+    status:'Active'
+  },
+  {
+    Age:31,
+    Sex: 'Male',
+    Weight:180,
+    Height:73,
+    ActivityLevel:'intense',
+    Goal:'Gaoin mass',
+    status:'Active'
+  },
+  {
+    Age:31,
+    Sex: 'Male',
+    Weight:180,
+    Height:73,
+    ActivityLevel:'intense',
+    Goal:'Gaoin mass',
+    status:'Active'
+  },
+  {
+    Age:31,
+    Sex: 'Male',
+    Weight:180,
+    Height:73,
+    ActivityLevel:'intense',
+    Goal:'Gaoin mass',
+    status:'Active'
   }
+
 ]

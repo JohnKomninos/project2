@@ -65,16 +65,17 @@ app.get('/Nutrition', (req,res)=>{
 })
 
 app.get('/Nutrition/Results/', (req,res)=>{
-  Schema.find
   res.render('results.ejs')
 })
 
 app.post('/Nutrition/', (req,res)=>{
+  Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
   Schema.create(req.body, (err, userInfo)=>{
     res.redirect('/Nutrition/Results/')
   })
+  })
 })
-// app.get('/seed/' , (req,res)=>{
+// app.get('/Nutrition/seed/' , (req,res)=>{
 //   Schema.create(nutrition, (err,seedData)=>{
 //     res.redirect('/')
 //   })

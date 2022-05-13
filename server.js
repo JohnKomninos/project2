@@ -75,11 +75,13 @@ app.post('/Nutrition/', (req,res)=>{
   })
   })
 })
-// app.get('/Nutrition/seed/' , (req,res)=>{
-//   Schema.create(nutrition, (err,seedData)=>{
-//     res.redirect('/')
-//   })
-// })
+
+app.get('/Nutrition/seed/' , (req,res)=>{
+  Schema.create(nutrition, (err,seedData)=>{
+    res.redirect('/')
+  })
+})
+
 //___________________
 //Listener
 //___________________

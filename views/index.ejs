@@ -5,7 +5,27 @@
     <title></title>
   </head>
   <body>
-    <form action='/Nutriton/Results/' method="POST">
-        <input type="text" name="" value="">
+    <form action='/Nutrition/' method="POST">
+      Age:  <input type="text" name="Age" required><br/><br/>
+      <ul>
+        Sex: <br/>
+        <input type="checkbox" name="Sex" value="male"><label>Male</label><br/><br/>
+        <input type="checkbox" name="Sex" value="female"><label>Female</label><br/><br/>
+      </ul>
+      Weight:  <input type="text" name="Weight" required><br/><br/>
+      Height:  <input type="text" name="Height" required><br/><br/>
+      <ul>
+        Activity Level: <br>
+         <input type="checkbox" name="ActivityLevel" value="light"><label>Light</label><br/><br/>
+         <input type="checkbox" name="ActivityLevel" value="moderate"><label>Moderate</label><br/><br/>
+         <input type="checkbox" name="ActivityLevel" value="intense"><label>Intense</label><br/><br/>
+      </ul>
+      <ul>
+      Goal:<br/>
+        <input type="checkbox" name="Goal" value="lose weight"><label>Lose weight</label><br/><br/>
+        <input type="checkbox" name="Goal" value="maintain  weight"><label>Maintian weight</label><br/><br/>
+        <input type="checkbox" name="Goal" value="gain mass"><label>Gain mass</label><br/><br/>
+      </ul>
+      <button>Submit</button>
     </form>
 </html>

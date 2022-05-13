@@ -64,6 +64,15 @@ app.get('/Nutrition', (req,res)=>{
   })
 })
 
+// app.get('/Nutrition/Results/:id/', (req,res)=>{
+//   res.render('results.ejs')
+// })
+
+app.post('/Nutrition/', (req,res)=>{
+  Schema.create(req.body, (err, userInfo)=>{
+    res.redirect('/Nutrition')
+  })
+})
 // app.get('/seed/' , (req,res)=>{
 //   Schema.create(nutrition, (err,seedData)=>{
 //     res.redirect('/')

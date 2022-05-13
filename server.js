@@ -64,7 +64,29 @@ app.get('/Nutrition/', (req,res)=>{
 
 app.get('/Nutrition/Results/', (req,res)=>{
   Schema.find({status:'Active'}, (err,results)=>{
-    res.render('results.ejs', {result:results})
+    let formula = 0
+    if(results[0].ActivityLevel==="None"){
+      results[0].ActivityLevel=1
+    } else if(results[0].ActivityLevel==="Light"){
+      results[0].ActivityLevel=1.2
+    } else if(results[0].ActivityLevel==="Moderate"){
+      results[0].ActivityLevel=1.4
+    } else{
+      results[0].ActivityLevel=1.6
+    }
+    if(results[0].Goal==="loseWeight"){
+      results[0].Goal=0.8
+    } else if(results[0].Goal==="maintainWeight"){
+      results[0].Goal=1
+    } else {
+      results[0].Goal=1.2
+    }
+    if(results[0].Sex==="male"){
+      formula = Math.round(((66.47+(13.75 * results[0].Weight) + (5.003 * results[0].Height) - (6.755 * results[0].Age))*results[0].ActivityLevel)*results[0].Goal)
+    } else{
+      formula = Math.round(((655.1+(9.563* results[0].Weight) + (1.85 * results[0].Height) - (4.676 * results[0].Age))*results[0].ActivityLevel)*results[0].Goal)
+    }
+    res.render('results.ejs', {result:results, final:formula})
   })
 })
 

@@ -56,8 +56,11 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // app.get('/', (req,res)=>{
 //   res.render('index.ejs')
 // })
-
 app.get('/', (req,res)=>{
+  res.redirect('/Nutrition/')
+})
+
+app.get('/Nutrition', (req,res)=>{
   Schema.find({}, (err,userInfo)=>{
     res.render('index.ejs' , {user:userInfo})
   })

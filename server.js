@@ -4,7 +4,7 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-const Schema = require('./models/schema.js')
+const Schema = require('./models/UserSchema.js')
 const nutrition = require('./models/data.js')
 const app = express ();
 const db = mongoose.connection;
@@ -53,9 +53,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 //localhost:3000
 
-// app.get('/', (req,res)=>{
-//   res.render('index.ejs')
-// })
+
 app.get('/', (req,res)=>{
   res.redirect('/Nutrition/')
 })

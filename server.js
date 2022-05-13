@@ -58,14 +58,14 @@ app.get('/', (req,res)=>{
   res.redirect('/Nutrition/')
 })
 
-app.get('/Nutrition', (req,res)=>{
-  Schema.find({}, (err,userInfo)=>{
-    res.render('index.ejs' , {user:userInfo})
-  })
+app.get('/Nutrition/', (req,res)=>{
+  res.render('index.ejs')
 })
 
 app.get('/Nutrition/Results/', (req,res)=>{
-  res.render('results.ejs')
+  Schema.find({status:'Active'}, (err,results)=>{
+    res.render('results.ejs', {result:results})
+  })
 })
 
 app.post('/Nutrition/', (req,res)=>{

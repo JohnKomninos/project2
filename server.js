@@ -56,7 +56,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
 app.get('/', (req,res)=>{
-  res.redirect('/Nutrition/')
+  res.redirect('/login/')
 })
 
 app.get('/Nutrition/', (req,res)=>{
@@ -112,6 +112,11 @@ app.get('/Nutrition/seed/' , (req,res)=>{
     res.redirect('/')
   })
 })
+
+app.get('/login/', (req,res)=>{
+  res.render('login.ejs')
+})
+
 
 //___________________
 //Listener

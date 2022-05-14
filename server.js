@@ -6,6 +6,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const Schema = require('./models/UserSchema.js')
 const CalorieSchema = require('./models/ResultsSchema.js')
+const UserInfo = require('./models/userinfo.js')
 const nutrition = require('./models/data.js')
 const app = express ();
 const db = mongoose.connection;
@@ -117,7 +118,10 @@ app.get('/login/', (req,res)=>{
   res.render('login.ejs')
 })
 
-
+app.post('/login', (req,res)=>{
+  UserInfo.create(req.body, (err,data)=>{
+  })
+})
 //___________________
 //Listener
 //___________________

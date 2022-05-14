@@ -119,8 +119,15 @@ app.get('/login/', (req,res)=>{
 })
 
 app.post('/login', (req,res)=>{
-  UserInfo.create(req.body, (err,data)=>{
-    res.redirect('/logincomplete/')
+  UserInfo.find({}, (err,data)=>{
+    for(let i=0;i<data.length;i++){
+      if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
+          res.redirect('/loginalreadytaken')
+      }
+    }
+    UserInfo.create(req.body, (err,data)=>{
+      res.redirect('/logincomplete/')
+  })
   })
 })
 

@@ -120,7 +120,12 @@ app.get('/login/', (req,res)=>{
 
 app.post('/login', (req,res)=>{
   UserInfo.create(req.body, (err,data)=>{
+    res.redirect('/logincomplete/')
   })
+})
+
+app.get('/logincomplete/', (req,res)=>{
+  res.render('logincomplete.ejs')
 })
 //___________________
 //Listener

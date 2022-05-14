@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<form action='/Nutrition/' method="POST">
+  Age:  <input type="text" name="Age" required><br/><br/>
+  <ul>
+    Sex: <br/>
+    <input type="checkbox" name="Sex" value="male"><label>Male</label><br/><br/>
+    <input type="checkbox" name="Sex" value="female"><label>Female</label><br/><br/>
+  </ul>
+  Weight:  <input type="text" name="Weight" required><br/><br/>
+  Height:  <input type="text" name="Height" required><br/><br/>
+  <ul>
+    Activity Level: <br>
+    <input type="checkbox" name="ActivityLevel" value="None"><label>None</label><br/><br/>
+     <input type="checkbox" name="ActivityLevel" value="Light"><label>Light</label><br/><br/>
+     <input type="checkbox" name="ActivityLevel" value="Moderate"><label>Moderate</label><br/><br/>
+     <input type="checkbox" name="ActivityLevel" value="Intense"><label>Intense</label><br/><br/>
+  </ul>
+  <ul>
+  Goal:<br/>
+    <input type="checkbox" name="Goal" value="loseWeight"><label>Lose weight</label><br/><br/>
+    <input type="checkbox" name="Goal" value="maintainWeight"><label>Maintain weight</label><br/><br/>
+    <input type="checkbox" name="Goal" value="gainMass"><label>Gain mass</label><br/><br/>
+    <input type="hidden" name="status" value="Active">
+  </ul>
+  <button>Submit</button>
+</form>
+  </body>
+</html>

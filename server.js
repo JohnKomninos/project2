@@ -55,13 +55,12 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 //localhost:3000
 
-
 app.get('/', (req,res)=>{
-  res.redirect('/login/')
+  res.redirect('/Nutrition/')
 })
 
 app.get('/Nutrition/', (req,res)=>{
-  res.render('index.ejs')
+  res.render('Nutrition.ejs')
 })
 
 app.get('/Nutrition/Results/', (req,res)=>{
@@ -100,6 +99,14 @@ app.get('/Nutrition/Results/', (req,res)=>{
   })
 })
 
+app.get('/Nutrition/:id', (req,res)=>{
+  Schema.find({status:'Active'}, (err,userData)=>{
+    CalorieSchema.find({status:'Active'}, (err,calorieData)=>{
+      res.render('show.ejs', {userInfo:userData, calorieInfo:calorieData})
+    })
+  })
+})
+
 app.post('/Nutrition/', (req,res)=>{
   Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
   Schema.create(req.body, (err, userInfo)=>{
@@ -108,40 +115,6 @@ app.post('/Nutrition/', (req,res)=>{
   })
 })
 
-app.get('/Nutrition/seed/' , (req,res)=>{
-  Schema.create(nutrition, (err,seedData)=>{
-    res.redirect('/')
-  })
-})
-
-app.get('/login/', (req,res)=>{
-  res.render('login.ejs')
-})
-
-app.post('/login', (req,res)=>{
-  UserInfo.find({}, (err,data)=>{
-    for(let i=0;i<data.length;i++){
-      if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
-          res.redirect('/loginalreadytaken')
-          return
-      }
-    }
-    UserInfo.create(req.body, (err,data)=>{
-      res.redirect('/logincomplete/')
-  })
-  })
-})
-
-app.get('/logincomplete/', (req,res)=>{
-  UserInfo.find({}, (err,data)=>{
-      let activeUser=data[data.length-1].username
-      res.render('logincomplete.ejs', {finalUser:activeUser})
-  })
-})
-
-app.get('/loginalreadytaken/' , (req,res)=>{
-  res.render('loginalreadytaken.ejs')
-})
 
 
 //___________________

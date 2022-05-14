@@ -1,0 +1,50 @@
+
+// app.get('/login/', (req,res)=>{
+//   res.render('login.ejs')
+// })
+//
+// app.post('/login', (req,res)=>{
+//   UserInfo.find({}, (err,data)=>{
+//     for(let i=0;i<data.length;i++){
+//       if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
+//           res.redirect('/loginalreadytaken')
+//           return
+//       }
+//     }
+//     UserInfo.create(req.body, (err,data)=>{
+//       res.redirect('/logincomplete/')
+//   })
+//   })
+// })
+//
+// app.get('/logincomplete/', (req,res)=>{
+//   UserInfo.find({}, (err,data)=>{
+//       let activeUser=data[data.length-1].username
+//       res.render('index.ejs', {finalUser:activeUser})
+//   })
+// })
+//
+// app.get('/loginalreadytaken/' , (req,res)=>{
+//   res.render('loginalreadytaken.ejs')
+// })
+
+
+//
+// app.post('/Nutrition/:id', (req,res)=>{
+//   UserInfo.findOneAndUpdate({username:req.params.id} , {$set:{Nutrition:req.body}} , {new:true} , (err,data)=>{
+//   res.redirect('/Nutrition/:id/')
+//   })
+// })
+
+
+
+
+
+
+
+//
+// app.get('/Nutrition/seed/' , (req,res)=>{
+//   Schema.create(nutrition, (err,seedData)=>{
+//     res.redirect('/')
+//   })
+// })

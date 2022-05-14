@@ -7,7 +7,8 @@ const users = new mongoose.Schema({
   Height:{type:Number, required:true},
   ActivityLevel:{type:String, required:true},
   Goal:{type:String, required:true},
-  status:String
+  status:String,
+  calories:String
 })
 
 const userInfo = mongoose.model('users', users)

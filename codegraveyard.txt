@@ -35,16 +35,3 @@
 //   res.redirect('/Nutrition/:id/')
 //   })
 // })
-
-
-
-
-
-
-
-//
-// app.get('/Nutrition/seed/' , (req,res)=>{
-//   Schema.create(nutrition, (err,seedData)=>{
-//     res.redirect('/')
-//   })
-// })

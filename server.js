@@ -123,6 +123,7 @@ app.post('/login', (req,res)=>{
     for(let i=0;i<data.length;i++){
       if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
           res.redirect('/loginalreadytaken')
+          return
       }
     }
     UserInfo.create(req.body, (err,data)=>{
@@ -137,6 +138,12 @@ app.get('/logincomplete/', (req,res)=>{
       res.render('logincomplete.ejs', {finalUser:activeUser})
   })
 })
+
+app.get('/loginalreadytaken/' , (req,res)=>{
+  res.render('loginalreadytaken.ejs')
+})
+
+
 //___________________
 //Listener
 //___________________

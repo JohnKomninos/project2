@@ -5,8 +5,9 @@ const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const Schema = require('./models/UserSchema.js')
-const CalorieSchema = require('./models/ResultsSchema.js')
+const FoodSchema = require('./models/foodSchema.js')
 const nutrition = require('./models/data.js')
+const foods = require('./models/fooddata.js')
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
@@ -99,6 +100,10 @@ app.get('/Nutrition/:id', (req,res)=>{
   })
 })
 
+app.get('/FoodIndex/', (req,res)=>{
+  res.render('food.ejs')
+})
+
 app.post('/Nutrition/', (req,res)=>{
   Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
   Schema.create(req.body, (err, userInfo)=>{
@@ -108,6 +113,18 @@ app.post('/Nutrition/', (req,res)=>{
 })
 
 
+//
+// app.get('/Nutrition/seed/' , (req,res)=>{
+//   Schema.create(nutrition, (err,seedData)=>{
+//     res.redirect('/')
+//   })
+// })
+
+  app.get('/Nutrition/foodseed/', (req,res)=>{
+    FoodSchema.create(foods, (err,seedData)=>{
+      res.redirect('/')
+    })
+  })
 
 //___________________
 //Listener

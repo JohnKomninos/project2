@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 
 const users = new mongoose.Schema({
-  Age:{type:String, required:true},
-  Sex:{type:String, required:true},
-  Weight:{type:Number, required:true},
-  Height:{type:Number, required:true},
-  ActivityLevel:{type:String, required:true},
-  Goal:{type:String, required:true},
+  Age:String,
+  Sex:String,
+  Weight:Number,
+  Height:Number,
+  ActivityLevel:String,
+  Goal:String,
   status:String,
-  calories:String
+  calories:Number
 })
 
 const userInfo = mongoose.model('users', users)

@@ -6,7 +6,6 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const Schema = require('./models/UserSchema.js')
 const CalorieSchema = require('./models/ResultsSchema.js')
-const UserInfo = require('./models/userinfo.js')
 const nutrition = require('./models/data.js')
 const app = express ();
 const db = mongoose.connection;
@@ -87,23 +86,16 @@ app.get('/Nutrition/Results/', (req,res)=>{
     } else{
       formula = Math.round(((655.1+(9.563* results[0].Weight) + (1.85 * results[0].Height) - (4.676 * results[0].Age))*results[0].ActivityLevel)*results[0].Goal)
     }
-    const storedData={
-      calories:formula,
-      status:"Active"
-    }
-    CalorieSchema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
-    CalorieSchema.create(storedData, (err,data)=>{
+
+    Schema.findOneAndUpdate({status:'Active'} , {calories:formula}, {new:true}, (err,data)=>{
     res.render('results.ejs', {result:results, final:formula})
-    })
     })
   })
 })
 
 app.get('/Nutrition/:id', (req,res)=>{
   Schema.find({status:'Active'}, (err,userData)=>{
-    CalorieSchema.find({status:'Active'}, (err,calorieData)=>{
-      res.render('show.ejs', {userInfo:userData, calorieInfo:calorieData})
-    })
+      res.render('show.ejs', {userInfo:userData})
   })
 })
 

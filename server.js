@@ -125,7 +125,10 @@ app.post('/login', (req,res)=>{
 })
 
 app.get('/logincomplete/', (req,res)=>{
-  res.render('logincomplete.ejs')
+  UserInfo.find({}, (err,data)=>{
+      let activeUser=data[data.length-1].username
+      res.render('logincomplete.ejs', {finalUser:activeUser})
+  })
 })
 //___________________
 //Listener

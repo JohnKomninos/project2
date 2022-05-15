@@ -176,11 +176,13 @@ app.post('/Nutrition/', (req,res)=>{
 
 
 app.post('/FoodIndex/:id', (req,res)=>{
+  Schema.find({status:'Active'}, (err,userId)=>{
   FoodSchema.findById(req.params.id, (err,data)=>{
   Schema.findOneAndUpdate({status:'Active'},{$push:{foodinformation:data}}, {new:true}, (err,updateData)=>{
-    res.redirect('/Nutrition/data.id')
+    res.redirect(`/Nutrition/${userId[0]._id}/`)
   })
   })
+})
 })
 
 app.put('/Nutrition/:id', (req,res)=>{
@@ -189,6 +191,13 @@ app.put('/Nutrition/:id', (req,res)=>{
   })
 })
 
+app.delete('/Nutrition/:id', (req,res)=>{
+  Schema.find({status:'Active'}, (err,id)=>{
+  Schema.updateOne({status:'Active'}, {$pull:{foodinformation:{_id:req.params.id}}},(err,data)=>{
+    res.redirect(`/Nutrition/${id[0]._id}/`)
+  })
+})
+})
 //
 // app.get('/Nutrition/seed/' , (req,res)=>{
 //   Schema.create(nutrition, (err,seedData)=>{

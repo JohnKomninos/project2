@@ -56,8 +56,33 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //localhost:3000
 
 app.get('/', (req,res)=>{
-  res.redirect('/Nutrition/')
+  res.redirect('/login/')
 })
+
+app.get('/login/', (req,res)=>{
+  res.render('login.ejs')
+})
+
+app.post('/login', (req,res)=>{
+  Schema.find({}, (err,data)=>{
+    for(let i=0;i<data.length;i++){
+      if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
+          res.redirect('/loginalreadytaken')
+          return
+      }
+    }
+    Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
+    Schema.create(req.body, (err,data)=>{
+      res.redirect('/Nutrition/')
+  })
+  })
+})
+})
+
+app.get('/loginalreadytaken/' , (req,res)=>{
+  res.render('loginalreadytaken.ejs')
+})
+
 
 app.get('/Nutrition/', (req,res)=>{
   res.render('Nutrition.ejs')
@@ -113,12 +138,13 @@ app.get('/FoodIndex/:id', (req,res)=>{
 })
 
 app.post('/Nutrition/', (req,res)=>{
-  Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
-  Schema.create(req.body, (err, userInfo)=>{
+  // Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
+  // Schema.create(req.body, (err, userInfo)=>{
+  Schema.findOneAndUpdate({status:'Active'},req.body, {new:true}, (err,updateData)=>{
     res.redirect('/Nutrition/Results/')
   })
   })
-})
+
 
 app.post('/FoodIndex/:id', (req,res)=>{
   FoodSchema.findById(req.params.id, (err,data)=>{

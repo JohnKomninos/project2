@@ -9,14 +9,14 @@ const users = new mongoose.Schema({
   Goal:String,
   status:String,
   calories:Number,
-  foodinformation:{
+  foodinformation:[{
     name:String,
     calories:Number,
     protein:Number,
     carbohydrates:Number,
     fat:Number,
     fiber:Number,
-    sugar:Number}
+    sugar:Number}]
 })
 
 const userInfo = mongoose.model('users', users)

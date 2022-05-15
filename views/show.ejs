@@ -17,5 +17,10 @@ Info:<br/>
       <button>View food index</button>
     </form>
     Selected Items:
+    <ul>
+    <%for(let i = 0;i<userInfo[0].foodinformation.length;i++){%>
+      <li><%=userInfo[0].foodinformation[i].name%></li>
+    <%}%>
+  </ul>
   </body>
 </html>

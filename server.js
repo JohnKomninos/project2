@@ -72,7 +72,12 @@ app.post('/login', (req,res)=>{
       }
     }
     Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
-    Schema.create(req.body, (err,data)=>{
+      const body = {
+        name:req.body.name,
+        username:req.body.username.toLowerCase(),
+        status:req.body.status
+      }
+    Schema.create(body, (err,data)=>{
       res.redirect('/Nutrition/')
   })
   })
@@ -92,7 +97,7 @@ app.post('/existing/', (req,res)=>{
     for(let i=0; i<data.length;i++){
       if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
         Schema.updateMany({status:'Active'}, {status:'not active'}, {new:true}, (err,userInfo)=>{
-          Schema.findOneAndUpdate({username:req.body.username}, {status:'Active'}, {new:true}, (err,active)=>{
+          Schema.findOneAndUpdate({username:req.body.username.toLowerCase()}, {status:'Active'}, {new:true}, (err,active)=>{
             res.redirect(`/Nutrition/${active._id}`)
             return
           })
@@ -101,24 +106,6 @@ app.post('/existing/', (req,res)=>{
     }
   })
 })
-// app.post('/existing', (req,res)=>{
-  // Schema.find({}, (err,data)=>{
-    // for(let i=0;i<data.length;i++){
-      // if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
-          // Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
-//             Schema.findOneAndUpdate({username:req.body.username},{status:'active', {new:true}, (err,active)=>{
-//               res.redirect('')
-//             })
-//           })
-//       }
-//     }
-//     Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
-//     Schema.create(req.body, (err,data)=>{
-//       res.redirect('/Nutrition/')
-//   })
-//   })
-// })
-// })
 
 app.get('/Nutrition/', (req,res)=>{
   res.render('Nutrition.ejs')

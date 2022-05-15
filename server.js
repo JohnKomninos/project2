@@ -83,6 +83,42 @@ app.get('/loginalreadytaken/' , (req,res)=>{
   res.render('loginalreadytaken.ejs')
 })
 
+app.get('/existing/', (req,res)=>{
+  res.render('existing.ejs')
+})
+
+app.post('/existing/', (req,res)=>{
+  Schema.find({}, (err,data)=>{
+    for(let i=0; i<data.length;i++){
+      if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
+        Schema.updateMany({status:'Active'}, {status:'not active'}, {new:true}, (err,userInfo)=>{
+          Schema.findOneAndUpdate({username:req.body.username}, {status:'Active'}, {new:true}, (err,active)=>{
+            res.redirect(`/Nutrition/${active._id}`)
+            return
+          })
+        })
+      }
+    }
+  })
+})
+// app.post('/existing', (req,res)=>{
+  // Schema.find({}, (err,data)=>{
+    // for(let i=0;i<data.length;i++){
+      // if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
+          // Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
+//             Schema.findOneAndUpdate({username:req.body.username},{status:'active', {new:true}, (err,active)=>{
+//               res.redirect('')
+//             })
+//           })
+//       }
+//     }
+//     Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
+//     Schema.create(req.body, (err,data)=>{
+//       res.redirect('/Nutrition/')
+//   })
+//   })
+// })
+// })
 
 app.get('/Nutrition/', (req,res)=>{
   res.render('Nutrition.ejs')

@@ -120,6 +120,14 @@ app.post('/Nutrition/', (req,res)=>{
   })
 })
 
+app.post('/FoodIndex/:id', (req,res)=>{
+  FoodSchema.findById(req.params.id, (err,data)=>{
+  Schema.findOneAndUpdate({status:'Active'},{foodinformation:data}, {new:true}, (err,updateData)=>{
+    res.redirect('/Nutrition/data.id')
+  })
+  })
+})
+
 
 //
 // app.get('/Nutrition/seed/' , (req,res)=>{

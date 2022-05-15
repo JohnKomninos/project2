@@ -8,7 +8,15 @@ const users = new mongoose.Schema({
   ActivityLevel:String,
   Goal:String,
   status:String,
-  calories:Number
+  calories:Number,
+  foodinformation:{
+    name:String,
+    calories:Number,
+    protein:Number,
+    carbohydrates:Number,
+    fat:Number,
+    fiber:Number,
+    sugar:Number}
 })
 
 const userInfo = mongoose.model('users', users)

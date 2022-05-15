@@ -18,6 +18,9 @@ Info:<br/>
       <button>View food index</button>
     </form>
     Selected Items:
+    <form action="/Nutrition/<%=userInfo[0]._id%>/edit" >
+        <button>Edit</button>
+    </form>
     <ul>
     <%for(let i = 0;i<userInfo[0].foodinformation.length;i++){%>
       <li><%=userInfo[0].foodinformation[i].name%></li>

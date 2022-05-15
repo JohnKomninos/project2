@@ -148,10 +148,16 @@ app.get('/Nutrition/:id', (req,res)=>{
   })
 })
 
-app.get('/FoodIndex/', (req,res)=>{
-FoodSchema.find({}, (err,data)=>{
-    res.render('food.ejs', {food:data})
+app.get('/Nutrition/:id/edit', (req,res)=>{
+    Schema.findById(req.params.id, (err,data)=>{
+      res.render('edit.ejs',{edit:data})
+    })
 })
+
+app.get('/FoodIndex/', (req,res)=>{
+  FoodSchema.find({}, (err,data)=>{
+    res.render('food.ejs', {food:data})
+  })
 })
 
 app.get('/FoodIndex/:id', (req,res)=>{
@@ -177,6 +183,11 @@ app.post('/FoodIndex/:id', (req,res)=>{
   })
 })
 
+app.put('/Nutrition/:id', (req,res)=>{
+  Schema.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err,updateModel)=>{
+    res.redirect(`/Nutrition/Results`)
+  })
+})
 
 //
 // app.get('/Nutrition/seed/' , (req,res)=>{

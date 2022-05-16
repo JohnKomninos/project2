@@ -145,6 +145,12 @@ app.get('/Nutrition/Results/', (req,res)=>{
   })
 })
 
+app.get('/Nutrition/:id/new', (req,res)=>{
+  Schema.find({status:'Active'}, (err,data)=>{
+      res.render('new.ejs', {userInfo:data})
+  })
+})
+
 app.get('/Nutrition/:id', (req,res)=>{
   Schema.find({status:'Active'}, (err,userData)=>{
       res.render('show.ejs', {userInfo:userData})
@@ -201,6 +207,15 @@ app.delete('/Nutrition/:id', (req,res)=>{
   })
 })
 })
+
+app.post('/Nutrition/:id/', (req,res)=>{
+  Schema.find({status:'Active'}, (err,id)=>{
+    Schema.findOneAndUpdate({status:'Active'},{$push:{foodinformation:req.body}}, {new:true}, (err,updateData)=>{
+    res.redirect(`/Nutrition/${id[0]._id}/`)
+    })
+  })
+})
+
 //
 // app.get('/Nutrition/seed/' , (req,res)=>{
 //   Schema.create(nutrition, (err,seedData)=>{

@@ -107,6 +107,9 @@ app.post('/existing/', (req,res)=>{
   })
 })
 
+app.get('/error/', (req,res)=>{
+  res.render('error.ejs')
+})
 app.get('/Nutrition/', (req,res)=>{
   res.render('Nutrition.ejs')
 })

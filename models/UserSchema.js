@@ -19,7 +19,9 @@ const users = new mongoose.Schema({
     fat:Number,
     fiber:Number,
     sugar:Number,
-    servingsize:Number}]
+    servingsize:Number,
+    numberofservingsize:Number,
+    totalCalories:Number}]
 })
 
 const userInfo = mongoose.model('users', users)

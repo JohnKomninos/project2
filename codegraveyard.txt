@@ -1,21 +1,7 @@
 
-// app.get('/login/', (req,res)=>{
-//   res.render('login.ejs')
-// })
+
 //
-// app.post('/login', (req,res)=>{
-//   UserInfo.find({}, (err,data)=>{
-//     for(let i=0;i<data.length;i++){
-//       if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
-//           res.redirect('/loginalreadytaken')
-//           return
-//       }
-//     }
-//     UserInfo.create(req.body, (err,data)=>{
-//       res.redirect('/logincomplete/')
-//   })
-//   })
-// })
+//
 //
 // app.get('/logincomplete/', (req,res)=>{
 //   UserInfo.find({}, (err,data)=>{
@@ -24,9 +10,7 @@
 //   })
 // })
 //
-// app.get('/loginalreadytaken/' , (req,res)=>{
-//   res.render('loginalreadytaken.ejs')
-// })
+//
 
 
 //
@@ -35,3 +19,16 @@
 //   res.redirect('/Nutrition/:id/')
 //   })
 // })
+
+app.post('Nutrition/:id:id1', (req,res)=>{
+Schema.find({status:'Active'}, (err,data)=>{
+  Schema.findOneAndUpdate({foodinformation.name:data.foodinformation[req.params.id1].name}, {$set:{numberofservingsize:req.body}}, {new:true}, (err,data1)=>{
+    res.send('data1')
+  })
+})
+  })
+
+  <form action="/Nutrition/<%=userInfo[0]._id%>/<%=userInfo[0].foodinformation[0]._id%>" method="post">
+    Number of serving sizes<input type="text" name="numberofservingsize" value="<%=userInfo[0].foodinformation[index].numberofservingsize%>" required><br/><br/>
+<input type="submit" value="Set serving size">
+  </form>

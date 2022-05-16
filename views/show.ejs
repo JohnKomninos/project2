@@ -23,7 +23,7 @@ Info:<br/>
     </form>
     <ul>
     <%for(let i = 0;i<userInfo[0].foodinformation.length;i++){%>
-      <li><%=userInfo[0].foodinformation[i].name%></li>
+      <li><a href="<%=i%>"><%=userInfo[0].foodinformation[i].name%></a></li>
       <li>CurrentCalories:<%=userInfo[0].foodinformation[i].calories%></li>
       <form action ="/Nutrition/<%=userInfo[0].foodinformation[i]._id%>?_method=DELETE" method="POST">
           <input type="submit" value="DELETE"/>

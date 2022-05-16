@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Name: <%=userInfo[0].foodinformation[index].name%><br></br>
+    Calories: <%=userInfo[0].foodinformation[index].calories%><br></br>
+    Protein: <%=userInfo[0].foodinformation[index].protein%><br></br>
+    Carbohydrates: <%=userInfo[0].foodinformation[index].carbohydrates%><br></br>
+    Fat: <%=userInfo[0].foodinformation[index].fat%><br></br>
+    Fiber: <%=userInfo[0].foodinformation[index].fiber%><br></br>
+    Sugar: <%=userInfo[0].foodinformation[index].sugar%><br></br>
+    Serving Size:<%=userInfo[0].foodinformation[index].servingsize%><br></br>
+  </body>
+  <form action="/Nutrition/<%=userInfo[0]._id%>/<%=userInfo[0].foodinformation[0]._id%>" method="post">
+    Number of serving sizes<input type="text" name="numberofservingsize" value="<%=userInfo[0].foodinformation[index].numberofservingsize%>" required><br/><br/>
+<input type="submit" value="Set serving size">
+  </form>
+</html>

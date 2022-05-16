@@ -8,7 +8,8 @@ const food = new mongoose.Schema({
   fat:Number,
   fiber:Number,
   sugar:Number,
-  servingsize:Number
+  servingsize:Number,
+  numberofservingsize:Number
 })
 
 const healthyFood = mongoose.model('HealthyFood', food)

@@ -175,6 +175,13 @@ app.get('/FoodIndex/:id', (req,res)=>{
   })
 })
 
+app.get('/Nutrition/:id/:id1',(req,res)=>{
+  Schema.find({status:'Active'},(err,data)=>{
+  res.render('servingsize.ejs', {userInfo:data, index:req.params.id1})
+  })
+})
+
+
 app.post('/Nutrition/', (req,res)=>{
   // Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
   // Schema.create(req.body, (err, userInfo)=>{
@@ -215,6 +222,7 @@ app.post('/Nutrition/:id/', (req,res)=>{
     })
   })
 })
+
 
 //
 // app.get('/Nutrition/seed/' , (req,res)=>{

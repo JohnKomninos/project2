@@ -14,8 +14,4 @@
     Sugar: <%=userInfo[0].foodinformation[index].sugar%><br></br>
     Serving Size:<%=userInfo[0].foodinformation[index].servingsize%><br></br>
   </body>
-  <form action="/Nutrition/<%=userInfo[0]._id%>/<%=userInfo[0].foodinformation[0]._id%>" method="post">
-    Number of serving sizes<input type="text" name="numberofservingsize" value="<%=userInfo[0].foodinformation[index].numberofservingsize%>" required><br/><br/>
-<input type="submit" value="Set serving size">
-  </form>
 </html>

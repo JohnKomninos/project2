@@ -18,7 +18,8 @@ const users = new mongoose.Schema({
     carbohydrates:Number,
     fat:Number,
     fiber:Number,
-    sugar:Number}]
+    sugar:Number,
+    servingsize:Number}]
 })
 
 const userInfo = mongoose.model('users', users)

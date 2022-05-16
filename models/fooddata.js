@@ -7,6 +7,7 @@ module.exports=[
     fat:111,
     fiber:111,
     sugar:1111,
+    servingsize:1111
   },
   {
     name:'ground turkey',
@@ -16,6 +17,7 @@ module.exports=[
     fat:222,
     fiber:222,
     sugar:222,
+    servingsize:2222
   },
   {
     name:'Salmon',
@@ -25,6 +27,7 @@ module.exports=[
     fat:333,
     fiber:333,
     sugar:333,
+    servingsize:33333
   },
   {
     name:'Tilapia',
@@ -34,6 +37,7 @@ module.exports=[
     fat:444,
     fiber:444,
     sugar:444,
+    servingsize:44444
   },
   {
     name:'Wheat Pasta',
@@ -43,6 +47,7 @@ module.exports=[
     fat:555,
     fiber:555,
     sugar:555,
+    servingsize:555
   },
   {
     name:'Quinoa',
@@ -52,6 +57,7 @@ module.exports=[
     fat:666,
     fiber:666,
     sugar:666,
+    servingsize:666
   },
   {
     name:'Brown Rice',
@@ -61,6 +67,7 @@ module.exports=[
     fat:777,
     fiber:777,
     sugar:777,
+    servingsize:777
   },
   {
     name:'Spinach',
@@ -70,6 +77,7 @@ module.exports=[
     fat:888,
     fiber:888,
     sugar:888,
+    servingsize:888
   },
   {
     name:'Kale',
@@ -79,5 +87,6 @@ module.exports=[
     fat:999,
     fiber:999,
     sugar:999,
+    servingsize:999
   },
 ]

@@ -5,13 +5,14 @@
     <title></title>
   </head>
   <body>
-<%=foodstats.name%>
-<%=foodstats.calories%>
-<%=foodstats.protein%>
-<%=foodstats.carbohydrates%>
-<%=foodstats.fat%>
-<%=foodstats.fiber%>
-<%=foodstats.sugar%>
+Name: <%=foodstats.name%><br/><br/>
+Calories:<%=foodstats.calories%><br/><br/>
+Protein:<%=foodstats.protein%><br/><br/>
+Carbohydrates:<%=foodstats.carbohydrates%><br/><br/>
+Fat:<%=foodstats.fat%><br/><br/>
+Fiber:<%=foodstats.fiber%><br/><br/>
+Sugar:<%=foodstats.sugar%><br/><br/>
+Serving Size:<%=foodstats.servingsize%><br/><br/>
 
 <form action='/FoodIndex/<%=foodstats._id%>' method="POST">
   <button>Add to personal show page</button>

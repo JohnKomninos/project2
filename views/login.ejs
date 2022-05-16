@@ -2,18 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/login.css">
     <title></title>
   </head>
   <body>
-    <form method='POST' action="/login/">
-    Enter your name<input type="text" name="name" required><br/>
-    Select a user name<input type="text" name="username"required><br/>
-    <input type="hidden" name="status" value="Active">
-          <button>Proceed to nutrition calculator</button>
-    </form>
-    <form method='get' action="/existing/">
-      <button>Enter an existing account</button>
-    </form>
-
+    <div class="flex-parent">
+      <div class="box1">
+          <form method='POST' action="/login/">
+            <h3>Enter your name: <input type="text" name="name" required><br/></h3>
+            <h3>Select a user name: <input type="text" name="username"required><br/></h3>
+            <input type="hidden" name="status" value="Active">
+            <h3><button class="btn btn-primary">Proceed to nutrition calculator</button></h3>
+          </form>
+          <form method='get' action="/existing/">
+            <h3><button class="btn btn-primary">Enter an existing account</button></h3>
+          </form>
+      </div>
+    </div>
   </body>
 </html>

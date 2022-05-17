@@ -11,7 +11,7 @@ module.exports=[
     numberofservingsize:1
   },
   {
-    name:'ground turkey',
+    name:'Ground Turkey',
     calories:222,
     protein:222,
     carbohydrates:222,

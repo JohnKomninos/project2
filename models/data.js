@@ -5,7 +5,7 @@ module.exports=[
     Weight:180,
     Height:73,
     ActivityLevel:'intense',
-    Goal:'Gaoin mass',
+    Goal:'Gain mass',
     status:'Active'
   },
   {
@@ -14,7 +14,7 @@ module.exports=[
     Weight:180,
     Height:73,
     ActivityLevel:'intense',
-    Goal:'Gaoin mass',
+    Goal:'Gain mass',
     status:'Active'
   },
   {
@@ -23,7 +23,7 @@ module.exports=[
     Weight:180,
     Height:73,
     ActivityLevel:'intense',
-    Goal:'Gaoin mass',
+    Goal:'Gain mass',
     status:'Active'
   },
   {
@@ -32,7 +32,7 @@ module.exports=[
     Weight:180,
     Height:73,
     ActivityLevel:'intense',
-    Goal:'Gaoin mass',
+    Goal:'Gain mass',
     status:'Active'
   },
   {
@@ -41,7 +41,7 @@ module.exports=[
     Weight:180,
     Height:73,
     ActivityLevel:'intense',
-    Goal:'Gaoin mass',
+    Goal:'Gain mass',
     status:'Active'
   }
 

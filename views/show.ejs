@@ -3,35 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/show.css">
   </head>
   <body>
-Recommended calories:<%=userInfo[0].calories%><br/>
-Info:<br/>
-    Name: <%=userInfo[0].name%><br/>
-    Age:  <%=userInfo[0].Age%><br/>
-    Sex:  <%=userInfo[0].Sex%><br/>
-    Weight:  <%=userInfo[0].Weight%><br/>
-    Height:  <%=userInfo[0].Height%><br/>
-    Activity level:  <%=userInfo[0].ActivityLevel%><br/>
-    Goal:  <%=userInfo[0].Goal%><br/>
+    <ul class= "stats">
+    <h3><li>Recommended calories:<%=userInfo[0].calories%></li></h3>
+    <h3><li>Name: <%=userInfo[0].name%></li></h3>
+    <h3><li>Age:  <%=userInfo[0].Age%></li></h3>
+    <h3><li>Sex:  <%=userInfo[0].Sex%></li></h3>
+    <h3><li>Weight:  <%=userInfo[0].Weight%> KG</li></h3>
+    <h3><li>Height:  <%=userInfo[0].Height%> CM</li></h3>
+    <h3><li>Activity level:  <%=userInfo[0].ActivityLevel%></li></h3>
+    <h3><li>Goal:  <%=userInfo[0].Goal%></li></h3>
+  </ul>
     <form method='get' action="/FoodIndex/">
-      <button>View food index</button>
+      <button class="btn btn-primary">View food index</button>
     </form>
-    Selected Items:
     <form action="/Nutrition/<%=userInfo[0]._id%>/edit" >
-        <button>Edit</button>
+        <button class="btn btn-primary">Edit</button>
     </form>
-    <ul>
+    <h3 class="selected">Selected Items:</h3>
+    <ul class="foods">
     <%for(let i = 0;i<userInfo[0].foodinformation.length;i++){%>
-      <li><a href="<%=i%>"><%=userInfo[0].foodinformation[i].name%></a></li>
-      <li>CurrentCalories:<%=userInfo[0].foodinformation[i].calories%></li>
+      <h3><li><a href="<%=i%>"><%=userInfo[0].foodinformation[i].name%></a></li></h3>
       <form action ="/Nutrition/<%=userInfo[0].foodinformation[i]._id%>?_method=DELETE" method="POST">
-          <input type="submit" value="DELETE"/>
+        <button class="btn btn-primary" type="submit">DELETE</button>
+          <!-- <input type="submit" value="DELETE"/> -->
       </form>
     <%}%>
   </ul>
   <form method='get' action="/Nutrition/<%=userInfo[0]._id%>/new">
-        <button>Add a new food item</button>
+        <button class="btn btn-primary">Add a new food item</button>
       </form>
   </body>
 </html>

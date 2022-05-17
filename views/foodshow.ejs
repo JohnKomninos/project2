@@ -3,19 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/foodshow.css">
   </head>
   <body>
-Name: <%=foodstats.name%><br/><br/>
-Calories:<%=foodstats.calories%><br/><br/>
-Protein:<%=foodstats.protein%><br/><br/>
-Carbohydrates:<%=foodstats.carbohydrates%><br/><br/>
-Fat:<%=foodstats.fat%><br/><br/>
-Fiber:<%=foodstats.fiber%><br/><br/>
-Sugar:<%=foodstats.sugar%><br/><br/>
-Serving Size:<%=foodstats.servingsize%><br/><br/>
+<h3>Name: <%=foodstats.name%></h3>
+<h3>Calories:<%=foodstats.calories%></h3>
+<h3>Protein:<%=foodstats.protein%></h3>
+<h3>Carbohydrates:<%=foodstats.carbohydrates%></h3>
+<h3>Fat:<%=foodstats.fat%></h3>
+<h3>Fiber:<%=foodstats.fiber%></h3>
+<h3>Sugar:<%=foodstats.sugar%></h3>
+<h3>Serving Size:<%=foodstats.servingsize%></h3>
 
 <form action='/FoodIndex/<%=foodstats._id%>' method="POST">
-  <button>Add to personal show page</button>
+  <button class="btn btn-primary">Add to personal show page</button>
 </form>
   </body>
 

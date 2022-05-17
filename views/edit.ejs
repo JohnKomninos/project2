@@ -11,24 +11,24 @@
       <h3>Age:  <input type="text" name="Age" value="<%=edit.Age%>" required><br/></h3>
       <ul>
         <h3>Sex: <br/>
-        <input type="checkbox" name="Sex" value="male"><label>Male</label>
-        <input type="checkbox" name="Sex" value="female"><label>Female</label></h3>
+        <input type="radio" name="Sex" value="male" required><label>Male</label>
+        <input type="radio" name="Sex" value="female"><label>Female</label></h3>
       </ul>
       <h3>Weight:  <input type="text" name="Weight" value="<%=edit.Weight%>" required><br/></h3>
       <h3>Height:  <input type="text" name="Height" value="<%=edit.Height%>" required><br/></h3>
       <ul>
         <h3>  Activity Level: <br>
-          <input type="checkbox" name="ActivityLevel" value="None"><label>None</label><br/>
-          <input type="checkbox" name="ActivityLevel" value="Light"><label>Light</label><br/>
-          <input type="checkbox" name="ActivityLevel" value="Moderate"><label>Moderate</label><br/>
-          <input type="checkbox" name="ActivityLevel" value="Intense"><label>Intense</label><br/>
+          <input type="radio" name="ActivityLevel" value="None" required><label>None</label><br/>
+          <input type="radio" name="ActivityLevel" value="Light"><label>Light</label><br/>
+          <input type="radio" name="ActivityLevel" value="Moderate"><label>Moderate</label><br/>
+          <input type="radio" name="ActivityLevel" value="Intense"><label>Intense</label><br/>
         </h3>
       </ul>
       <ul>
       <h3>Goal:<br/>
-        <input type="checkbox" name="Goal" value="loseWeight"><label>Lose weight</label><br/>
-        <input type="checkbox" name="Goal" value="maintainWeight"><label>Maintain weight</label><br/>
-        <input type="checkbox" name="Goal" value="gainMass"><label>Gain mass</label><br/></h3>
+        <input type="radio" name="Goal" value="loseWeight" required><label>Lose weight</label><br/>
+        <input type="radio" name="Goal" value="maintainWeight"><label>Maintain weight</label><br/>
+        <input type="radio" name="Goal" value="gainMass"><label>Gain mass</label><br/></h3>
 
       </ul>
       <button class="btn btn-primary">Update</button>

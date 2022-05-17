@@ -24,17 +24,28 @@
         <button class="btn btn-primary">Edit</button>
     </form>
     <h3 class="selected">Selected Items:</h3>
-    <ul class="foods">
-    <%for(let i = 0;i<userInfo[0].foodinformation.length;i++){%>
-      <h3><li><a href="<%=i%>"><%=userInfo[0].foodinformation[i].name%></a></li></h3>
-      <form action ="/Nutrition/<%=userInfo[0].foodinformation[i]._id%>?_method=DELETE" method="POST">
-        <button class="btn btn-primary" type="submit">DELETE</button>
-          <!-- <input type="submit" value="DELETE"/> -->
-      </form>
-    <%}%>
-  </ul>
-  <form method='get' action="/Nutrition/<%=userInfo[0]._id%>/new">
+
+    <form method='get' action="/Nutrition/<%=userInfo[0]._id%>/new">
         <button class="btn btn-primary">Add a new food item</button>
       </form>
+      <table>
+        <tr>
+          <th><h3>Name</h3></th>
+          <th><h3>Calories</h3></th>
+          <th><h3># of servings</h3></th>
+          <th><h3>Remove</h3></th>
+        </tr>
+        <%for(let i =0;i<userInfo[0].foodinformation.length;i++){%>
+          <tr>
+            <td><h3><a href="<%=i%>"><%=userInfo[0].foodinformation[i].name%></a></h3></td>
+            <td><h3><%=userInfo[0].foodinformation[i].calories%></h3></td>
+            <td><h3><%=userInfo[0].foodinformation[i].servingsize%></h3></td>
+            <td><form action ="/Nutrition/<%=userInfo[0].foodinformation[i]._id%>?_method=DELETE" method="POST">
+              <button class="btn btn-primary" type="submit">DELETE</button>
+                <!-- <input type="submit" value="DELETE"/> -->
+            </form></td>
+          </tr>
+        <%}%>
+      </table>
   </body>
 </html>

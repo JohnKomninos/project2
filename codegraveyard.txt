@@ -32,3 +32,13 @@ Schema.find({status:'Active'}, (err,data)=>{
     Number of serving sizes<input type="text" name="numberofservingsize" value="<%=userInfo[0].foodinformation[index].numberofservingsize%>" required><br/><br/>
 <input type="submit" value="Set serving size">
   </form>
+
+  <ul class="foods">
+  <%for(let i = 0;i<userInfo[0].foodinformation.length;i++){%>
+    <h3><li><a href="<%=i%>"><%=userInfo[0].foodinformation[i].name%></a></li></h3>
+    <form action ="/Nutrition/<%=userInfo[0].foodinformation[i]._id%>?_method=DELETE" method="POST">
+      <button class="btn btn-primary" type="submit">DELETE</button>
+        <!-- <input type="submit" value="DELETE"/> -->
+    </form>
+  <%}%>
+  </ul>

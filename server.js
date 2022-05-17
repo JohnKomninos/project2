@@ -231,11 +231,11 @@ app.post('/Nutrition/:id/', (req,res)=>{
 //   })
 // })
 
-  // app.get('/Nutrition/foodseed/', (req,res)=>{
-  //   FoodSchema.create(foods, (err,seedData)=>{
-  //     res.redirect('/')
-  //   })
-  // })
+  app.get('/Nutrition/foodseed/', (req,res)=>{
+    FoodSchema.create(foods, (err,seedData)=>{
+      res.redirect('/')
+    })
+  })
 
 //___________________
 //Listener

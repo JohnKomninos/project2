@@ -9,7 +9,8 @@ const food = new mongoose.Schema({
   fiber:Number,
   sugar:Number,
   servingsize:Number,
-  numberofservingsize:Number
+  numberofservingsize:Number,
+  image:String
 })
 
 const healthyFood = mongoose.model('HealthyFood', food)

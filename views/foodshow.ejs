@@ -7,15 +7,17 @@
     <link rel="stylesheet" href="/foodshow.css">
   </head>
   <body>
-<h3>Name: <%=foodstats.name%></h3>
-<h3>Calories:<%=foodstats.calories%></h3>
-<h3>Protein:<%=foodstats.protein%></h3>
-<h3>Carbohydrates:<%=foodstats.carbohydrates%></h3>
-<h3>Fat:<%=foodstats.fat%></h3>
-<h3>Fiber:<%=foodstats.fiber%></h3>
-<h3>Sugar:<%=foodstats.sugar%></h3>
-<h3>Serving Size:<%=foodstats.servingsize%></h3>
-
+    <h3>Name: <%=foodstats.name%></h3>
+    <h3>Calories:<%=foodstats.calories%></h3>
+    <h3>Protein:<%=foodstats.protein%></h3>
+    <h3>Carbohydrates:<%=foodstats.carbohydrates%></h3>
+    <h3>Fat:<%=foodstats.fat%></h3>
+    <h3>Fiber:<%=foodstats.fiber%></h3>
+    <h3>Sugar:<%=foodstats.sugar%></h3>
+    <h3>Serving Size:<%=foodstats.servingsize%></h3>
+    <div class="image">
+      <img src="<%=foodstats.image%>" alt="">
+    </div>
 <form action='/FoodIndex/<%=foodstats._id%>' method="POST">
   <button class="btn btn-primary">Add to personal show page</button>
 </form>

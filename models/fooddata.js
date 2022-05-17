@@ -8,7 +8,8 @@ module.exports=[
     fiber:111,
     sugar:1111,
     servingsize:1111,
-    numberofservingsize:1
+    numberofservingsize:1,
+    image:"https://www.wellplated.com/wp-content/uploads/2021/02/Baked-Chicken-Breasts-Recipe.jpg"
   },
   {
     name:'Ground Turkey',
@@ -19,7 +20,8 @@ module.exports=[
     fiber:222,
     sugar:222,
     servingsize:2222,
-    numberofservingsize:1
+    numberofservingsize:1,
+    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDx6fxLbNjcftOWTfgsyIMEBpgCAByONLKMw&usqp=CAU"
   },
   {
     name:'Salmon',
@@ -30,7 +32,8 @@ module.exports=[
     fiber:333,
     sugar:333,
     servingsize:33333,
-    numberofservingsize:1
+    numberofservingsize:1,
+    image:"https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2020%2F01%2FFresh-Salmon-Fillets-by-FudioGetty-Images-2000.jpg"
   },
   {
     name:'Tilapia',
@@ -41,7 +44,8 @@ module.exports=[
     fiber:444,
     sugar:444,
     servingsize:44444,
-    numberofservingsize:1
+    numberofservingsize:1,
+    image:"https://images.heb.com/is/image/HEBGrocery/000373291?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0"
   },
   {
     name:'Wheat Pasta',
@@ -52,7 +56,8 @@ module.exports=[
     fiber:555,
     sugar:555,
     servingsize:555,
-    numberofservingsize:1
+    numberofservingsize:1,
+    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIVxgmBBwbG6chmX2eOAK9W3JuYPoJVr4KSw&usqp=CAU"
   },
   {
     name:'Quinoa',
@@ -63,7 +68,8 @@ module.exports=[
     fiber:666,
     sugar:666,
     servingsize:666,
-    numberofservingsize:1
+    numberofservingsize:1,
+    image:"https://www.simplyrecipes.com/thmb/9JZwrvLteZzlJnIAJ2diqsE2LZY=/2000x1334/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2020__07__Make-Fluffy-Quinoa-LEAD-6-f21288dc6fff44398955f1d41b65e11c.jpg"
   },
   {
     name:'Brown Rice',
@@ -74,7 +80,8 @@ module.exports=[
     fiber:777,
     sugar:777,
     servingsize:777,
-    numberofservingsize:1
+    numberofservingsize:1,
+    image:"https://images.media-allrecipes.com/userphotos/8668314.jpg"
   },
   {
     name:'Spinach',
@@ -85,7 +92,8 @@ module.exports=[
     fiber:888,
     sugar:888,
     servingsize:888,
-    numberofservingsize:1
+    numberofservingsize:1,
+    image:"https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/05/spinach-1296x728-header.jpg?w=1155&h=1528"
   },
   {
     name:'Kale',
@@ -96,6 +104,7 @@ module.exports=[
     fiber:999,
     sugar:999,
     servingsize:999,
-    numberofservingsize:1
+    numberofservingsize:1,
+    image:"https://g6c4m6d2.rocketcdn.me/wp-content/uploads/2014/10/Depositphotos_45557215_xl-2015.jpg"
   },
 ]

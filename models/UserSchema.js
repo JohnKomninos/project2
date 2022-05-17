@@ -21,6 +21,7 @@ const users = new mongoose.Schema({
     sugar:Number,
     servingsize:Number,
     numberofservingsize:Number,
+    image:String,
     totalCalories:Number}]
 })
 

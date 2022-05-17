@@ -194,6 +194,12 @@ app.post('/Nutrition/', (req,res)=>{
 app.post('/FoodIndex/:id', (req,res)=>{
   Schema.find({status:'Active'}, (err,userId)=>{
   FoodSchema.findById(req.params.id, (err,data)=>{
+  for(let i = 0;i<userId[0].foodinformation.length;i++){
+    if(userId[0].foodinformation[i].name===data.name){
+      res.redirect(`/Nutrition/${userId[0]._id}/`)
+      return
+    }
+  }
   Schema.findOneAndUpdate({status:'Active'},{$push:{foodinformation:data}}, {new:true}, (err,updateData)=>{
     res.redirect(`/Nutrition/${userId[0]._id}/`)
   })

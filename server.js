@@ -229,6 +229,25 @@ app.post('/Nutrition/:id/', (req,res)=>{
   })
 })
 
+app.post('/Nutrition/:id/:id1', (req,res)=>{
+  Schema.find({status:'Active'}, (err,data1)=>{
+  let food = data1[0].foodinformation[req.params.id1].name
+  Schema.findOneAndUpdate({status:'Active', "foodinformation.name":food},{$set:{'foodinformation.$.numberofservingsize':req.body.numberofservingsize}} , (err,data)=>{
+  res.redirect(`/Nutrition/${data1[0]._id}/`)
+})
+})
+})
+
+// let heart = data[0].foodinformation[req.params.id1].name
+// console.log(heart)
+
+// app.post('Nutrition/:id:id1', (req,res)=>{
+// Schema.find({status:'Active'}, (err,data)=>{
+//   Schema.findOneAndUpdate({foodinformation.name:data.foodinformation[req.params.id1].name}, {$set:{numberofservingsize:req.body}}, {new:true}, (err,data1)=>{
+//     res.send('data1')
+//   })
+// })
+//   })
 
 //
 // app.get('/Nutrition/seed/' , (req,res)=>{
@@ -236,7 +255,7 @@ app.post('/Nutrition/:id/', (req,res)=>{
 //     res.redirect('/')
 //   })
 // })
-
+  //
   // app.get('/Nutrition/foodseed/', (req,res)=>{
   //   FoodSchema.create(foods, (err,seedData)=>{
   //     res.redirect('/')

@@ -177,7 +177,7 @@ app.get('/FoodIndex/:id', (req,res)=>{
 
 app.get('/Nutrition/:id/:id1',(req,res)=>{
   Schema.find({status:'Active'},(err,data)=>{
-  res.render('servingsize.ejs', {userInfo:data, index:req.params.id1})
+  res.render('servingsize.ejs', {userInfo:data, id:req.params.id, index:req.params.id1})
   })
 })
 
@@ -231,11 +231,11 @@ app.post('/Nutrition/:id/', (req,res)=>{
 //   })
 // })
 
-  app.get('/Nutrition/foodseed/', (req,res)=>{
-    FoodSchema.create(foods, (err,seedData)=>{
-      res.redirect('/')
-    })
-  })
+  // app.get('/Nutrition/foodseed/', (req,res)=>{
+  //   FoodSchema.create(foods, (err,seedData)=>{
+  //     res.redirect('/')
+  //   })
+  // })
 
 //___________________
 //Listener

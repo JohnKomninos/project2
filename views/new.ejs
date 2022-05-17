@@ -3,18 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/foodshow.css">
   </head>
   <body>
 <form action="/Nutrition/<%=userInfo[0]._id%>" method="post">
-Name: <input type="text" name="name" required><br/><br/>
-Calories:  <input type="text" name="calories" required><br/><br/>
-Protein:  <input type="text" name="protein" required><br/><br/>
-Carbohydrates:  <input type="text" name="carbohydrates" required><br/><br/>
-Fat:  <input type="text" name="fat" required><br/><br/>
-Fiber:  <input type="text" name="fiber" required><br/><br/>
-Sugar:  <input type="text" name="sugar" required><br/><br/>
-Serving Size: <input type="text" name="servingsize"><br/><br/>
-<input type="submit" value="Create item">
+<h3>Name: <input type="text" name="name" required><br/></h3>
+<h3>Calories:  <input type="text" name="calories" required><br/></h3>
+<h3>Protein:  <input type="text" name="protein" required><br/></h3>
+<h3>Carbohydrates:  <input type="text" name="carbohydrates" required><br/></h3>
+<h3>Fat:  <input type="text" name="fat" required><br/></h3>
+<h3>Fiber:  <input type="text" name="fiber" required><br/></h3>
+<h3>Sugar:  <input type="text" name="sugar" required><br/></h3>
+<h3>Serving Size: <input type="text" name="servingsize"><br/></h3>
+<button class="btn btn-primary" type="submit">Create item</button>
 </form>
   </body>
 </html>

@@ -3,15 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="/servingsize.css">
   </head>
   <body>
-    Name: <%=userInfo[0].foodinformation[index].name%><br></br>
-    Calories: <%=userInfo[0].foodinformation[index].calories%><br></br>
-    Protein: <%=userInfo[0].foodinformation[index].protein%><br></br>
-    Carbohydrates: <%=userInfo[0].foodinformation[index].carbohydrates%><br></br>
-    Fat: <%=userInfo[0].foodinformation[index].fat%><br></br>
-    Fiber: <%=userInfo[0].foodinformation[index].fiber%><br></br>
-    Sugar: <%=userInfo[0].foodinformation[index].sugar%><br></br>
-    Serving Size:<%=userInfo[0].foodinformation[index].servingsize%><br></br>
+    <h3>Name: <%=userInfo[0].foodinformation[index].name%><br></h3>
+    <h3>Calories: <%=userInfo[0].foodinformation[index].calories%><br></h3>
+    <h3>Protein: <%=userInfo[0].foodinformation[index].protein%><br></h3>
+    <h3>Carbohydrates: <%=userInfo[0].foodinformation[index].carbohydrates%><br></h3>
+    <h3>Fat: <%=userInfo[0].foodinformation[index].fat%><br></h3>
+    <h3>Fiber: <%=userInfo[0].foodinformation[index].fiber%><br></h3>
+    <h3>Sugar: <%=userInfo[0].foodinformation[index].sugar%><br></h3>
+    <h3>Serving Size:<%=userInfo[0].foodinformation[index].servingsize%><br></h3>
+    <form method='get' action="/Nutrition/<%=id%>/">
+      <button class="btn btn-primary">Back to personal page</button>
+    </form>
   </body>
 </html>

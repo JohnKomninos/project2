@@ -2,6 +2,7 @@ module.exports=[
   {
     name:'Chicken',
     calories:239,
+    totalCalories:239,
     protein:27,
     carbohydrates:0,
     fat:14,
@@ -14,6 +15,7 @@ module.exports=[
   {
     name:'Ground Turkey',
     calories:203,
+    totalCalories:203,
     protein:27,
     carbohydrates:0,
     fat:10,
@@ -26,6 +28,8 @@ module.exports=[
   {
     name:'Salmon',
     calories:208,
+    totalCalories:208,
+    totalCalories:208,
     protein:20,
     carbohydrates:0,
     fat:13,
@@ -38,6 +42,7 @@ module.exports=[
   {
     name:'Tilapia',
     calories:129,
+    totalCalories:129,
     protein:26,
     carbohydrates:0,
     fat:2.7,
@@ -50,6 +55,7 @@ module.exports=[
   {
     name:'Wheat Pasta',
     calories:210,
+    totalCalories:210,
     protein:6,
     carbohydrates:37,
     fat:1.5,
@@ -62,6 +68,7 @@ module.exports=[
   {
     name:'Quinoa',
     calories:170,
+    totalCalories:170,
     protein:6,
     carbohydrates:27,
     fat:1.5,
@@ -74,6 +81,7 @@ module.exports=[
   {
     name:'Brown Rice',
     calories:160,
+    totalCalories:160,
     protein:4,
     carbohydrates:32,
     fat:1,
@@ -86,6 +94,7 @@ module.exports=[
   {
     name:'Spinach',
     calories:25,
+    totalCalories:25,
     protein:2,
     carbohydrates:1,
     fat:0,
@@ -98,6 +107,7 @@ module.exports=[
   {
     name:'Kale',
     calories:40,
+    totalCalories:40,
     protein:4,
     carbohydrates:5,
     fat:1,

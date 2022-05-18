@@ -223,31 +223,33 @@ app.delete('/Nutrition/:id', (req,res)=>{
 
 app.post('/Nutrition/:id/', (req,res)=>{
   Schema.find({status:'Active'}, (err,id)=>{
+    for(let i=0; i<id[0].foodinformation.length;i++){
+      if(id[0].foodinformation[i].name===req.body.name){
+        res.redirect(`/Nutrition/${id[0]._id}/`)
+        return
+      }
+    }
     Schema.findOneAndUpdate({status:'Active'},{$push:{foodinformation:req.body}}, {new:true}, (err,updateData)=>{
+      let newCalories=req.body.calories
+      // console.log(newCalories)
+      Schema.findOneAndUpdate({status:'Active', "foodinformation.name":req.body.name}, {$set:{'foodinformation.$.totalCalories':req.body.calories}}, (err,data)=>{
     res.redirect(`/Nutrition/${id[0]._id}/`)
     })
   })
+})
 })
 
 app.post('/Nutrition/:id/:id1', (req,res)=>{
   Schema.find({status:'Active'}, (err,data1)=>{
   let food = data1[0].foodinformation[req.params.id1].name
   Schema.findOneAndUpdate({status:'Active', "foodinformation.name":food},{$set:{'foodinformation.$.numberofservingsize':req.body.numberofservingsize}} , (err,data)=>{
+    let updatedServingSize = data1[0].foodinformation[req.params.id1].calories * req.body.numberofservingsize
+    Schema.findOneAndUpdate({status:'Active', "foodinformation.name":food},{$set:{'foodinformation.$.totalCalories':updatedServingSize}}, (err,data2)=>{
   res.redirect(`/Nutrition/${data1[0]._id}/`)
 })
 })
 })
-
-// let heart = data[0].foodinformation[req.params.id1].name
-// console.log(heart)
-
-// app.post('Nutrition/:id:id1', (req,res)=>{
-// Schema.find({status:'Active'}, (err,data)=>{
-//   Schema.findOneAndUpdate({foodinformation.name:data.foodinformation[req.params.id1].name}, {$set:{numberofservingsize:req.body}}, {new:true}, (err,data1)=>{
-//     res.send('data1')
-//   })
-// })
-//   })
+})
 
 //
 // app.get('/Nutrition/seed/' , (req,res)=>{

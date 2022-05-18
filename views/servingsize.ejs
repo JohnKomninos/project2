@@ -14,9 +14,9 @@
     <h3>Fat: <%=userInfo[0].foodinformation[index].fat%><br></h3>
     <h3>Fiber: <%=userInfo[0].foodinformation[index].fiber%><br></h3>
     <h3>Sugar: <%=userInfo[0].foodinformation[index].sugar%><br></h3>
-    <h3>Serving Size:<%=userInfo[0].foodinformation[index].servingsize%><br></h3>
+    <h3>Serving Size:<%=userInfo[0].foodinformation[index].servingsize%> grams<br></h3>
     <form action="/Nutrition/<%=userInfo[0]._id%>/<%=index%>" method="post">
-      Number of serving sizes<input type="text" name="numberofservingsize" value="<%=userInfo[0].foodinformation[index].numberofservingsize%>" required><br/><br/>
+      <h3>Number of serving sizes:</h3><input type="text" name="numberofservingsize" value="<%=userInfo[0].foodinformation[index].numberofservingsize%>" required><br/><br/>
       <button class="btn btn-primary" type="submit">Set serving size</button>
     </form>
     <form method='get' action="/Nutrition/<%=id%>/">

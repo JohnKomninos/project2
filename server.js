@@ -98,7 +98,7 @@ app.post('/existing/', (req,res)=>{
       if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
         Schema.updateMany({status:'Active'}, {status:'not active'}, {new:true}, (err,userInfo)=>{
           Schema.findOneAndUpdate({username:req.body.username.toLowerCase()}, {status:'Active'}, {new:true}, (err,active)=>{
-            res.redirect(`/Nutrition/${active._id}`)
+            res.redirect(`/Nutrition/${active._id}/`)
             return
           })
         })

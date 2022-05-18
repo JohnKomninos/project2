@@ -24,6 +24,10 @@
     <form action="/Nutrition/<%=userInfo[0]._id%>/edit" >
         <button class="btn btn-primary">Edit</button>
     </form>
+    <form action ="/Nutrition/<%=userInfo[0].name%>/<%=userInfo[0]._id%>?_method=DELETE" method="POST">
+      <button class="btn btn-primary" type="submit">delete account</button>
+        <!-- <input type="submit" value="DELETE"/> -->
+    </form>
     <h3 class="selected">Selected Items:</h3>
 
     <form method='get' action="/Nutrition/<%=userInfo[0]._id%>/new">

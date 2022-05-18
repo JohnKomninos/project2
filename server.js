@@ -225,6 +225,13 @@ app.delete('/Nutrition/:id', (req,res)=>{
 })
 })
 
+app.delete('/Nutrition/:id/:id1', (req,res)=>{
+  Schema.findByIdAndRemove(req.params.id1, (err,data)=>{
+    console.log(req.params.id)
+    res.redirect('/login/')
+  })
+})
+
 app.post('/Nutrition/:id/', (req,res)=>{
   Schema.find({status:'Active'}, (err,id)=>{
     for(let i=0; i<id[0].foodinformation.length;i++){

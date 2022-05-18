@@ -31,7 +31,7 @@
       <table>
         <tr>
           <th><h3>Name</h3></th>
-          <th><h3>Total Calories</h3></th>
+          <th><h3>Calories</h3></th>
           <th><h3># of servings</h3></th>
           <th><h3>Remove</h3></th>
         </tr>
@@ -46,6 +46,13 @@
             </form></td>
           </tr>
         <%}%>
+        <tr>
+          <th><h3>Total</h3></th>
+          <th><h3 <%if(totals>userInfo[0].calories){%>
+            style="color:red"
+          <%}%>
+            ><%=totals%></h3></th>
+        </tr>
       </table>
   </body>
 </html>

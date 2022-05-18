@@ -153,7 +153,11 @@ app.get('/Nutrition/:id/new', (req,res)=>{
 
 app.get('/Nutrition/:id', (req,res)=>{
   Schema.find({status:'Active'}, (err,userData)=>{
-      res.render('show.ejs', {userInfo:userData})
+    let total = 0
+    for(let i = 0; i < userData[0].foodinformation.length;i++){
+    total += userData[0].foodinformation[i].totalCalories
+    }
+      res.render('show.ejs', {userInfo:userData, totals:total})
   })
 })
 

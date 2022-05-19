@@ -42,3 +42,7 @@ Schema.find({status:'Active'}, (err,data)=>{
     </form>
   <%}%>
   </ul>
+
+  app.get('/error/', (req,res)=>{
+    res.render('error.ejs')
+  })

@@ -8,7 +8,10 @@ const Schema = require('./models/UserSchema.js')
 const FoodSchema = require('./models/foodSchema.js')
 const nutrition = require('./models/data.js')
 const foods = require('./models/fooddata.js')
+// const loginController = require('./controllers/login.js');
+// const existingController = require('./controllers/Existing.js');
 const app = express ();
+
 const db = mongoose.connection;
 require('dotenv').config()
 //___________________
@@ -48,8 +51,8 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-
-
+// app.use(loginController);
+// app.use(existingController);
 //___________________
 // Routes
 //___________________
@@ -107,9 +110,6 @@ app.post('/existing/', (req,res)=>{
   })
 })
 
-app.get('/error/', (req,res)=>{
-  res.render('error.ejs')
-})
 app.get('/Nutrition/', (req,res)=>{
   res.render('Nutrition.ejs')
 })

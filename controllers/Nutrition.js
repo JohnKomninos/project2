@@ -5,6 +5,36 @@ const FoodSchema = require('../models/foodSchema.js')
 const nutrition = require('../models/data.js')
 const foods = require('../models/fooddata.js')
 
+////new//////
+router.get('/', (req,res)=>{
+  res.redirect('/NutritionIndex/')
+})
+
+router.get('/NutritionIndex/', (req,res)=>{
+  res.render('NutritionIndex.ejs')
+})
+
+router.post('/NutritionIndex/', (req,res)=>{
+  Schema.find({}, (err,data)=>{
+    for(let i=0;i<data.length;i++){
+      if(req.body.username.toLowerCase()=== data[i].username.toLowerCase()){
+          res.redirect('/loginalreadytaken')
+          return
+      }
+    }
+    Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
+      const body = {
+        name:req.body.name,
+        username:req.body.username.toLowerCase(),
+        status:req.body.status
+      }
+    Schema.create(body, (err,data)=>{
+      res.redirect('/Nutrition/')
+  })
+  })
+})
+})
+///////old///////
 router.get('/Nutrition/', (req,res)=>{
   res.render('Nutrition.ejs')
 })
@@ -94,7 +124,7 @@ router.post('/Nutrition/', (req,res)=>{
   router.delete('/Nutrition/:id/:id1', (req,res)=>{
     Schema.findByIdAndRemove(req.params.id1, (err,data)=>{
       console.log(req.params.id)
-      res.redirect('/login/')
+      res.redirect('/NutritionIndex/')
     })
   })
 
@@ -106,6 +136,7 @@ router.post('/Nutrition/', (req,res)=>{
           return
         }
       }
+
       Schema.findOneAndUpdate({status:'Active'},{$push:{foodinformation:req.body}}, {new:true}, (err,updateData)=>{
         let newCalories=req.body.calories
         // console.log(newCalories)

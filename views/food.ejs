@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="/food.css">
   </head>
   <body>
-<ul>
-<%for(let i=0;i<food.length;i++){%>
-  <h3><li><a href="/FoodIndex/<%=food[i]._id%>"><%=food[i].name%></a></li></h3>
-<%}%>
-</ul>
+    <ul>
+      <%for(let i=0;i<food.length;i++){%>
+        <h3><li><a href="/FoodIndex/<%=food[i]._id%>"><%=food[i].name%></a></li></h3>
+        <%}%>
+    </ul>
   </body>
 </html>

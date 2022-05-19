@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="/foodshow.css">
   </head>
   <body>
-<form action="/Nutrition/<%=userInfo[0]._id%>" method="post">
-<h3>Name: <input type="text" name="name" required><br/></h3>
-<h3>Calories:  <input type="text" name="calories" required><br/></h3>
-<h3>Protein:  <input type="text" name="protein" required><br/></h3>
-<h3>Carbohydrates:  <input type="text" name="carbohydrates" required><br/></h3>
-<h3>Fat:  <input type="text" name="fat" required><br/></h3>
-<h3>Fiber:  <input type="text" name="fiber" required><br/></h3>
-<h3>Sugar:  <input type="text" name="sugar" required><br/></h3>
-<h3>Serving Size: <input type="text" name="servingsize"> grams<br/></h3>
-<input type="hidden" name="numberofservingsize" value="1">
-<button class="btn btn-primary" type="submit">Create item</button>
-</form>
+    <form action="/Nutrition/<%=userInfo[0]._id%>" method="post">
+      <h3>Name: <input type="text" name="name" required><br/></h3>
+      <h3>Calories:  <input type="text" name="calories" required><br/></h3>
+      <h3>Protein:  <input type="text" name="protein" required><br/></h3>
+      <h3>Carbohydrates:  <input type="text" name="carbohydrates" required><br/></h3>
+      <h3>Fat:  <input type="text" name="fat" required><br/></h3>
+      <h3>Fiber:  <input type="text" name="fiber" required><br/></h3>
+      <h3>Sugar:  <input type="text" name="sugar" required><br/></h3>
+      <h3>Serving Size: <input type="text" name="servingsize"> grams<br/></h3>
+      <input type="hidden" name="numberofservingsize" value="1">
+      <button class="btn btn-primary" type="submit">Create item</button>
+    </form>
   </body>
 </html>

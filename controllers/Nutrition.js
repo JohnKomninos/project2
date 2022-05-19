@@ -5,15 +5,17 @@ const FoodSchema = require('../models/foodSchema.js')
 const nutrition = require('../models/data.js')
 const foods = require('../models/fooddata.js')
 
-////new//////
+////the root redirects to my index page
 router.get('/', (req,res)=>{
   res.redirect('/NutritionIndex/')
 })
 
+///the index pags is rendered
 router.get('/NutritionIndex/', (req,res)=>{
   res.render('NutritionIndex.ejs')
 })
 
+////if you enter a name that already exists, you get sent to the login already taken page. if the name doesnt exist in my database, the new user schema is created.
 router.post('/NutritionIndex/', (req,res)=>{
   Schema.find({}, (err,data)=>{
     for(let i=0;i<data.length;i++){
@@ -34,11 +36,13 @@ router.post('/NutritionIndex/', (req,res)=>{
   })
 })
 })
-///////old///////
+
+///after the login in screen, you are brough to the first form to fill out.
 router.get('/Nutrition/', (req,res)=>{
   res.render('Nutrition.ejs')
 })
 
+///based on the submitted req.body from the /nutrition/ form, a calculation is run to determine recommended calories.
 router.get('/Nutrition/Results/', (req,res)=>{
   Schema.find({status:'Active'}, (err,results)=>{
     let formula = 0
@@ -70,12 +74,14 @@ router.get('/Nutrition/Results/', (req,res)=>{
   })
 })
 
+//this brings you to the new page which has a form for creating a new food
 router.get('/Nutrition/:id/new', (req,res)=>{
   Schema.find({status:'Active'}, (err,data)=>{
       res.render('new.ejs', {userInfo:data})
   })
 })
 
+////this is the person show page for the user. Their is also a calculation in here, totaling their calories accross all chosen and created items.
 router.get('/Nutrition/:id', (req,res)=>{
   Schema.find({status:'Active'}, (err,userData)=>{
     let total = 0
@@ -86,19 +92,21 @@ router.get('/Nutrition/:id', (req,res)=>{
   })
 })
 
+///This is the page with the form that lets you edit any of your previous inputted personal information.
 router.get('/Nutrition/:id/edit', (req,res)=>{
     Schema.findById(req.params.id, (err,data)=>{
       res.render('edit.ejs',{edit:data})
     })
 })
 
+//this page shows you the details on your chosen and created foods as well as lets you set serving sizes.
 router.get('/Nutrition/:id/:id1',(req,res)=>{
   Schema.find({status:'Active'},(err,data)=>{
   res.render('servingsize.ejs', {userInfo:data, id:req.params.id, index:req.params.id1})
   })
 })
 
-
+//This form takes your personal information and adds it to the user schema
 router.post('/Nutrition/', (req,res)=>{
   // Schema.updateMany({status:'Active'},{status:'not active'}, {new:true}, (err,userInfo)=>{
   // Schema.create(req.body, (err, userInfo)=>{
@@ -107,12 +115,14 @@ router.post('/Nutrition/', (req,res)=>{
   })
   })
 
+//This form takes your update personal information and updates the schema
   router.put('/Nutrition/:id', (req,res)=>{
     Schema.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err,updateModel)=>{
       res.redirect(`/Nutrition/Results`)
     })
   })
 
+//This form lets you delete any chosen or created food items
   router.delete('/Nutrition/:id', (req,res)=>{
     Schema.find({status:'Active'}, (err,id)=>{
     Schema.updateOne({status:'Active'}, {$pull:{foodinformation:{_id:req.params.id}}},(err,data)=>{
@@ -121,6 +131,7 @@ router.post('/Nutrition/', (req,res)=>{
   })
   })
 
+//this form lets you delete your entire account
   router.delete('/Nutrition/:id/:id1', (req,res)=>{
     Schema.findByIdAndRemove(req.params.id1, (err,data)=>{
       console.log(req.params.id)
@@ -128,6 +139,7 @@ router.post('/Nutrition/', (req,res)=>{
     })
   })
 
+//this form pushes the new food information into the schema. if the name is a repeat, the item will not go into the schema.
   router.post('/Nutrition/:id/', (req,res)=>{
     Schema.find({status:'Active'}, (err,id)=>{
       for(let i=0; i<id[0].foodinformation.length;i++){
@@ -147,6 +159,7 @@ router.post('/Nutrition/', (req,res)=>{
   })
   })
 
+//This lets you set the number of servings. a calculation is also run to updated the total calories based on the number of servings.
   router.post('/Nutrition/:id/:id1', (req,res)=>{
     Schema.find({status:'Active'}, (err,data1)=>{
     let food = data1[0].foodinformation[req.params.id1].name

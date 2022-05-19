@@ -50,6 +50,7 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+/////using my controllers
 app.use(loginController);
 app.use(existingController);
 app.use(nutritionController)
